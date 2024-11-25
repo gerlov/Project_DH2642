@@ -1,0 +1,92 @@
+/* Layout styling */
+.layout {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #e0fffff6;
+    border-right: 1px solid #8dddfc;
+    height: 100%;
+    overflow: hidden;
+    transition: width 0.3s ease; /* transition for collapsing */
+    position: relative;
+}
+
+.sidebar.open {
+    width: 250px;
+}
+
+.sidebar.closed {
+    width: 30px; /* Minimum width when sidebar is collapsed */
+    border-right: none;
+}
+
+/* Toggle button */
+.toggle-button-container {
+    position: absolute;
+    top: 50%;
+    right: 5px; 
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.toggle-button {
+    color: rgb(23, 126, 174);
+    border: none;
+    cursor: pointer;
+    width: 20px; /* Size of the button */
+    height: 40px; /* Size of the button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+/* Sidebar sections */
+.sidebar-section {
+    margin: 15px 10px;
+}
+
+.collapsible, .non-collapsible, .logout-button {
+    width: 90%;
+    background: #124e55;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.logout-button {
+    background: #dc3545;
+    position: absolute;
+    bottom: 0; /* Align to the bottom of the container */
+    left: 0; 
+    right: 0; 
+    text-align: center; 
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+}
+
+.main-content.with-sidebar {
+    margin-left: 250px; /* Matches the sidebar width when open */
+}
+
+.main-content.full-screen {
+    margin-left: 30px; /* Matches the collapsed sidebar width */
+}
+

@@ -1,23 +1,17 @@
 import { createRoot } from "react-dom/client";
-import { observable, configure, reaction } from "mobx";
-import { connectToFirebase } from "../firebase/firebaseModel"
+import React from 'react';
+//import SidebarView1 from "./views/sidebarView1";
+import SidebarView from "./views/sidebarView";
 
-configure({ enforceActions: "never" }); 
+createRoot(document.getElementById('root'))
+    .render(
+        <div style={{ display: 'flex' }}>
+            {/* Sidebar */}
+            <SidebarView />
 
-import { model } from "../model/rehabModel"; 
-import { Search } from "../components/search/searchPresenter";
-
-const reactiveModel = observable(model);
-
-connectToFirebase(reactiveModel, reaction);
-
-createRoot(document.getElementById('root')).render(
-  <div>
-    <h1>My App</h1>
-
-    <Search model={reactiveModel} />
-  </div>
-);
-
-// Expose model for debugging
-window.myModel = reactiveModel;
+            {/* Main Content */}
+            <div style={{ marginLeft: '50px', padding: '20px' }}>
+                hello world!
+            </div>
+        </div>
+    );  
