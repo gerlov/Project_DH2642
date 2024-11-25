@@ -1,0 +1,28 @@
+.search-view-container h2 {
+    color: black;
+}
+
+.search-view-container {
+    text-align: center;
+    top: 155px;
+    left: 20px;
+    right: 20px;
+
+    input {
+        width: 265px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        padding: 8px;
+        font-size: 15px;
+        transition: width 0.2s;
+    }
+
+    .fix-search & {
+        position: fixed;
+        top: 10px;
+
+        input {
+            width: 250px;
+        }
+    }
+}
