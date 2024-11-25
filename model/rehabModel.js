@@ -1,3 +1,4 @@
+import { getMockExercisesDetails } from "../api/exerciseDb";
 import { resolvePromise } from "../api/resolvePromise";
 
 
@@ -44,7 +45,12 @@ const model = {
             return;
         }
         this.currentExerciseId = exerciseId;
-        const searchPromise = getDishDetails(exerciseId);
+        
+        if (!this.currentExercisePromiseState) {
+            this.currentExercisePromiseState = {};
+        }
+
+        const searchPromise = getMockExercisesDetails(exerciseId);
 
         resolvePromise(searchPromise, this.currentDishPromiseState);
     },

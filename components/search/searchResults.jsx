@@ -7,7 +7,7 @@ function SearchResults({ searchResults, resultChosenACB }) {
         <div
           key={result.id}
           className="result-container"
-          onClick={() => resultChosenACB(result)}
+          // onClick={() => resultChosenACB(result)}
         >
           <div className="result-metadata-container">
             <div className="result-metadata-target">

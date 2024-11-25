@@ -44,10 +44,9 @@ function modelToPersistence(model) {
 
 
 function fetchAndSetExercisesACB(exerciseIds, model) {
-    //TODO:
-    // return getExerciseDetails(exerciseIds).then((exercises) => {
-    //     model.exercises = exercises;
-    // });
+    return getExerciseDetails(exerciseIds).then((exercises) => {
+        model.exercises = exercises;
+    });
 }
 
 function persistenceToModel(data, model) {
